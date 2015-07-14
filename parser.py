@@ -25,7 +25,7 @@ class ChatParser(object):
 
         # Compile the needed regex objects
         self.url_re = re.compile(r'https?://[a-zA-Z0-9\./]+')
-        self.emoticon_re = re.compile(r'\(([a-zA-Z0-9]{,15})\)')
+        self.emoticon_re = re.compile(r'\(([a-zA-Z0-9]{1,15})\)')
         self.mention_re = re.compile(r'@(\w+)', re.U)
         self.title_re = re.compile(r'<title>([^<]*)</title>', re.M | re.U | re.I)
 
