@@ -10,6 +10,14 @@ import HTMLParser
 class ChatParser(object):
     """
     A simple class to wrap string parsing functionality for chat messages.
+    Call the parse() function with a string argument to parse out
+    meta-data from the string.
+
+    Usage:
+
+    >>> p = ChatParser()
+    >>> p.parse("This is a test (blah) @mentat http://google.com @bart")
+    {"mentions": ["mentat", "bart"], "emoticons": ["blah"], "links": [{"url": "http://google.com", "title": "Google"}]}
     """
 
     def __init__(self):
