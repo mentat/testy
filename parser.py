@@ -6,6 +6,7 @@ import urllib2
 import logging
 import HTMLParser
 
+
 class ChatParser(object):
     """
     A simple class to wrap string parsing functionality for chat messages.
@@ -20,7 +21,6 @@ class ChatParser(object):
         self.mention_re = re.compile(r'@(\w+)', re.U)
         self.title_re = re.compile(r'<title>([^<]*)</title>', re.M | re.U | re.I)
 
-
     def _parse_urls(self, input_string):
         # Parse out URLs and attempt to fetch title data, return a list of dicts
 
@@ -28,7 +28,7 @@ class ChatParser(object):
 
         for url in self.url_re.findall(input_string):
 
-            url_data = {"url":url, "title":""}
+            url_data = {"url": url, "title": ""}
 
             try:
                 # Open url with 5 second timeout
@@ -65,7 +65,6 @@ class ChatParser(object):
 
             urls.append(url_data)
             return urls
-
 
     def _parse_mentions(self, input_string):
         # Parse the @mentions from an input string and return the username
@@ -117,13 +116,10 @@ class ChatParser(object):
         if emoticons:
             result['emoticons'] = emoticons
 
-
         return json.dumps(result)
 
-
-
 if __name__ == "__main__":
-    # Allow stdin/stdout usage
+    # Allow command line usage
     import sys
 
     if len(sys.argv) == 2:

@@ -5,6 +5,7 @@ import unittest
 import parser
 import json
 
+
 class TestChatParser(unittest.TestCase):
     """
     Test chat parser correctness.
@@ -12,18 +13,18 @@ class TestChatParser(unittest.TestCase):
 
     # Test cases
     TESTS = {
-        "@chris you around?":{
+        "@chris you around?": {
             "mentions": [
-            "chris"
+                "chris"
             ]
         },
-        "Good morning! (megusta) (coffee)":{
+        "Good morning! (megusta) (coffee)": {
             "emoticons": [
                 "megusta",
                 "coffee"
             ]
         },
-        "Olympics are starting soon; http://www.nbcolympics.com":{
+        "Olympics are starting soon; http://www.nbcolympics.com": {
             "links": [
                 {
                     "url": "http://www.nbcolympics.com",
@@ -31,7 +32,7 @@ class TestChatParser(unittest.TestCase):
                 }
             ]
         },
-        "@bob @john (success) such a cool feature; https://twitter.com/jdorfman/status/430511497475670016":{
+        "@bob @john (success) such a cool feature; https://twitter.com/jdorfman/status/430511497475670016": {
             "mentions": [
                 "bob",
                 "john"
@@ -39,8 +40,8 @@ class TestChatParser(unittest.TestCase):
             "emoticons": [
                 "success"
             ],
-             "links": [
-                 {
+            "links": [
+                {
                     "url": "https://twitter.com/jdorfman/status/430511497475670016",
                     "title": "Justin Dorfman on Twitter: \"nice..."
                 }
