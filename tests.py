@@ -46,6 +46,26 @@ class TestChatParser(unittest.TestCase):
                     "title": "Justin Dorfman on Twitter: \"nice ..."
                 }
             ]
+        },
+        "@bob @john (success) (wow) such a cool feature; http://google.com https://twitter.com/jdorfman/status/430511497475670016": {
+            "mentions": [
+                "bob",
+                "john"
+            ],
+            "emoticons": [
+                "success",
+                "wow"
+            ],
+            "links": [
+                {
+                    "url": "http://google.com",
+                    "title": "Google"
+                },
+                {
+                    "url": "https://twitter.com/jdorfman/status/430511497475670016",
+                    "title": "Justin Dorfman on Twitter: \"nice ..."
+                }
+            ]
         }
     }
 

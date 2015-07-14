@@ -72,7 +72,8 @@ class ChatParser(object):
                     break
 
             urls.append(url_data)
-            return urls
+
+        return urls
 
     def _parse_mentions(self, input_string):
         # Parse the @mentions from an input string and return the username
@@ -91,15 +92,15 @@ class ChatParser(object):
         # A naive function to truncate a string and add an ellipsis. Returns a string.
 
         if len(input_string) > max_length:
-            # 45 is 49th place minus 4 characters (for ellipsis and space).
-            last_space = input_string.rfind(" ", 0, 45)
+            # max_length (less one) place minus 4 characters (for ellipsis and space).
+            last_space = input_string.rfind(" ", 0, max_length - 1 - 4)
 
             if last_space == -1:
                 # Bummer, big hammer, a more elegant solution would have looked
                 # for word-boundaries instead, but I assume this is simple enough
                 # for the purpose of this exercise. I'm taking a leap and deciding
                 # not to add a space since we might be truncating a word.
-                return u"%s..." % input_string[0:46]
+                return u"%s..." % input_string[0:max_length - 1 - 3]
             else:
                 # It turns out ellipsis mid sentence needs a space, grammar is cool.
                 return u"%s ..." % input_string[0:last_space]
