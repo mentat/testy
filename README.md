@@ -19,7 +19,7 @@ specification given below.
 
     >>> p = parser.ChatParser()
     >>> p.parse("This is a test (blah) @mentat http://google.com @bart")
-    {"mentions": ["mentat", "bart"], "emoticons": ["blah"], "links": [{"url": "http://google.com", "title": "Google"}]}
+    '{"mentions": ["mentat", "bart"], "emoticons": ["blah"], "links": [{"url": "http://google.com", "title": "Google"}]}'
 
 ## Specification
 
