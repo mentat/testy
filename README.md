@@ -41,6 +41,7 @@ For example, calling your function with the following inputs should result in
 the corresponding return values.
 
 _Input:_ "@chris you around?"
+
 _Return (string):_
 
     {
@@ -50,6 +51,7 @@ _Return (string):_
     }
 
 _Input:_ "Good morning! (megusta) (coffee)"
+
 _Return (string):_
 
     {
@@ -61,6 +63,7 @@ _Return (string):_
 
 
 _Input:_ "Olympics are starting soon; http://www.nbcolympics.com"
+
 _Return (string):_
 
     {
@@ -74,6 +77,7 @@ _Return (string):_
 
 
 _Input:_ "@bob @john (success) such a cool feature; https://twitter.com/jdorfman/status/430511497475670016"
+
 _Return (string):_
 
     {
