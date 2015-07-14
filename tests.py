@@ -28,7 +28,7 @@ class TestChatParser(unittest.TestCase):
             "links": [
                 {
                     "url": "http://www.nbcolympics.com",
-                    "title": "NBC Olympics | Home of the 2016 Olympic Games..."
+                    "title": "NBC Olympics | Home of the 2016 Olympic ..."
                 }
             ]
         },
@@ -43,7 +43,7 @@ class TestChatParser(unittest.TestCase):
             "links": [
                 {
                     "url": "https://twitter.com/jdorfman/status/430511497475670016",
-                    "title": "Justin Dorfman on Twitter: \"nice..."
+                    "title": "Justin Dorfman on Twitter: \"nice ..."
                 }
             ]
         }

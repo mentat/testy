@@ -91,15 +91,18 @@ class ChatParser(object):
         # A naive function to truncate a string and add an ellipsis. Returns a string.
 
         if len(input_string) > max_length:
-            last_space = input_string.rfind(" ", 0, 46)
+            # 45 is 49th place minus 4 characters (for ellipsis and space).
+            last_space = input_string.rfind(" ", 0, 45)
 
             if last_space == -1:
                 # Bummer, big hammer, a more elegant solution would have looked
                 # for word-boundaries instead, but I assume this is simple enough
-                # for the purpose of this exercise.
+                # for the purpose of this exercise. I'm taking a leap and deciding
+                # not to add a space since we might be truncating a word.
                 return u"%s..." % input_string[0:46]
             else:
-                return u"%s..." % input_string[0:last_space]
+                # It turns out ellipsis mid sentence needs a space, grammar is cool.
+                return u"%s ..." % input_string[0:last_space]
         else:
             return input_string
 
